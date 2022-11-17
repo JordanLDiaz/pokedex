@@ -12,11 +12,25 @@ function _drawMyPokemans() {
 }
 export class MyPokemansController {
   constructor() {
+    appState.on('myPokemans', _drawMyPokemans)
     this.getPokemans()
   }
   async getPokemans() {
     try {
       await myPokemansService.getPokemans()
+    } catch (error) {
+      Pop.error(error.message)
+      console.log(error);
+    }
+  }
+
+  setOnePokemon(id) {
+    myPokemansService.setOnePokemon(id)
+  }
+
+  async addToPokedex() {
+    try {
+      await myPokemansService.addToPokedex()
     } catch (error) {
       Pop.error(error.message)
       console.log(error);

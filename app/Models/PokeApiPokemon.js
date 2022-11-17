@@ -1,5 +1,6 @@
 export class PokeApiPokemon {
   constructor(data) {
+    this.id = data.id || ''
     this.name = data.name
     this.weight = data.weight
     this.nickName = data.nickName
@@ -18,6 +19,7 @@ export class PokeApiPokemon {
       <img src=" ${this.img}" class="col-12 img-fluid"></img>
       <h5 class="col-6 text-center">Weight : <span> ${this.weight}</span></h5>
       <h5 class="col-6 text-center">Height : <span> ${this.height} </span></h5>
+      ${this.ComputeButtons}
     `
   }
 
@@ -25,5 +27,13 @@ export class PokeApiPokemon {
     return `
     <h2 class="text-center"> Please select a Pokemon from the list </h2>
     `
+  }
+
+  get ComputeButtons() {
+    if (this.id) {
+      return `
+      <button class="btn btn-primary" onclick="app.myPokemansController.addToPokedex()"> Catch 'Em! </button>
+      `
+    }
   }
 }
