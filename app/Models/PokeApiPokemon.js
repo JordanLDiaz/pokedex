@@ -25,7 +25,7 @@ export class PokeApiPokemon {
 
   get PlaceholderTemplate() {
     return `
-    <h2 class="text-center"> Please select a Pokemon from the list </h2>
+    <h2 class="text-center text-dark"> Please select a Pokemon from the list </h2>
     `
   }
 
