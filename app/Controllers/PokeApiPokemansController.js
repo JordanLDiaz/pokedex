@@ -13,11 +13,11 @@ function _drawApiPokemans() {
 }
 function _drawActivePokemon() {
   let pokemon = appState.activePokemon
-  if (pokemon) {
-    setHTML('active-pokemon', pokemon.ActiveTemplate)
-  } else {
-    setHTML('active-pokemon', PokeApiPokemon.PlaceholderTemplate)
-  }
+  // if (pokemon) {
+  setHTML('active-pokemon', pokemon.ActiveTemplate)
+  // } else {
+  //   setHTML('active-pokemon', PokeApiPokemon.PlaceholderTemplate)
+  // }
 }
 export class PokeApiPokemansController {
   constructor() {
